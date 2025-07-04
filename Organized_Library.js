@@ -247,19 +247,6 @@ const nextList = {
 //  });
 // }
 
-// Run to view both libraries
-//displayLibrary(currentLibrary, "CURRENT LIBRARY");
-// displayLibrary(nextList, "\nNEXT LIST");
-
-// Access all Ethics works
-//console.log(library["Ethics & Moral Philosophy"]);
-
-// Get all literature works
-//console.log(library["Literature & Poetry"]);
-
-// Count categories
-//console.log(`Categories: ${Object.keys(library).length}`);
-
 console.log("Hello from Hyper!");
 
 r1.question("Which grouping dost thou elect, that thy printing might commence with swiftness and grace?", function printingDecision (printingChoice){
@@ -276,19 +263,40 @@ r1.question("Which grouping dost thou elect, that thy printing might commence wi
   "Francis Bacon_Novum Organum [270 pages]",
   "Aristotle_Rhetoric [91 pages]",
   "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-  "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]"
+  "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]",
+  "Alexis Henri C M Clerel Tocqueville_Democracy in America [583 + 513 pages]"
   ];
   let historyFocused = [
   "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
   "Soren Kierkegaard_The Crowd is Untruth [11 pages]"
   ];
-  let calculatedPageNumbers = [
-    
-  ]
+  
+function extractPageCounts(bookList) {
+  return bookList.map(entry => {
+    const match = entry.match(/\[(.+?)\s*pages\]/);
+    if (match) {
+      const parts = match[1].split('+').map(s => parseInt(s.trim(), 10));
+      const sum = parts.reduce((acc, val) => acc + (isNaN(val) ? 0 : val), 0);
+      return sum;
+    }
+    return 0;
+  });
+}
+
+let programmingPageCounts = extractPageCounts(programmingFocused);
+let historyPageCounts = extractPageCounts(historyFocused);
+const programmingTotalPages = programmingPageCounts.reduce((sum, pages) => sum + pages, 0);
+const historyTotalPages = historyPageCounts.reduce((sum, pages) => sum + pages, 0);
+
+console.log("Programming Totals:", programmingPageCounts);
+console.log("History Totals:", historyPageCounts);
+console.log("Total pages in programmingFocused:", programmingTotalPages);
+console.log("Total pages in historyFocused:", historyTotalPages);
+
 
   if (printingChoice === "History Focused") {
-  console.log(historyFocused + calculatedPageNumbers)
+  console.log(historyFocused)
 } else if (printingChoice === "Programming Focused") {
   console.log(programmingFocused)
 } else {
