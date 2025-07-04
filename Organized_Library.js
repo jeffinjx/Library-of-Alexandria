@@ -1,0 +1,301 @@
+const readline = require('readline');
+const r1 = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Current Library - Items I Own
+const currentLibrary = {
+  "Philosophy": [
+    "Plato_Republic",
+    "Plato_Protagoras",
+    "Plato_Apology",
+    "Plato_Gorgias",
+    "Aristotle_Nicomachean Ethics",
+    "Immanuel Kant_Critique of Pure Reason",
+    "René Descartes_Meditations on First Philosophy",
+    "David Hume_An Enquiry Concerning Human Understanding",
+    "David Hume_Dialogues Concerning Natural Religion",
+    "Georg Wilhelm Friedrich Hegel_The Logic of Hegel",
+    "Titus Lucretius Carus_Of The Nature of Things",
+    "Boethius_The Consolation of Philosophy",
+    "Introduction to Philosophy: Ethics Rebus Community",
+    "John Stuart Mill_On Liberty", 
+    "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 1",
+    "Fyodor Dostoyevsky_Notes from the Underground",
+    "Friedrich Wilhelm Nietzsche_Beyond Good and Evil",
+    "Friedrich Wilhelm Nietzsche_Thus Spake Zarathustra",
+    "Nicolo Machiavelli_The Prince", 
+    "John Locke_The Two Treatises of Civil Government",
+    "Étienne De La Boétie_Slaves By Choice",
+    "ForallxCalgary", 
+    "Classical Logic (Stanford Encyclopedia of Philosophy)",
+    "Informal Logic (Stanford Encyclopedia of Philosophy)",
+    "Epistemology (Stanford Encyclopedia of Philosophy)",
+    "Inductive Logic (Stanford Encyclopedia of Philosophy)",
+    "The Analysis of Knowledge (Stanford Encyclopedia of Philosophy)",
+    "A Priori Justification and Knowledge (Stanford Encyclopedia of Philosophy)",
+    "The Metaphysics of Causation (Stanford Encyclopedia of Philosophy)",
+    "Metaphysics (Stanford Encyclopedia of Philosophy)",
+    "Free Will (Stanford Encyclopedia of Philosophy)",
+    "Ancient Theories of Freedom and Determinism (Stanford Encyclopedia of Philosophy)",
+    "Personal Identity (Stanford Encyclopedia of Philosophy)",
+    "Time (Stanford Encyclopedia of Philosophy)",
+    "Principle of Sufficient Reason (Stanford Encyclopedia of Philosophy)",
+    "Stoicism (Stanford Encyclopedia of Philosophy)",
+    "Critical Theory (Frankfurt School) (Stanford Encyclopedia of Philosophy)",
+    "Reasons for Action: Justification, Motivation, Explanation (Stanford Encyclopedia of Philosophy)",
+    "Aristotle (Stanford Encyclopedia of Philosophy)"
+  ],
+  
+  "Religion & Theology": [
+    "David Hume_The Natural History of Religion",
+    "Ludwig Feuerbach_The Essence of Christianity",
+    "Philosophy of Religion (Stanford Encyclopedia of Philosophy)",
+    "John Bunyan_The Pilgrim’s progress [252 pages]"
+  ],
+  
+  "Self-Development": [
+    "Marcus Aurelius_Meditations", 
+    "Musashi Miyamoto_The Book of Five Rings",
+    "Sun Tzu_The Art of War", 
+    "Baltasar Gracián_The Art of Worldly Wisdom",
+    "Epictetus_The Enchiridion", 
+    "Samuel Smiles_Self-Help [209 pages]",
+    "Personal Autonomy (Stanford Encyclopedia of Philosophy)",
+    "Agency (Stanford Encyclopedia of Philosophy)",
+    "Michel de Montaigne_Essays of Michel de Montaigne—Complete [1267 pages]",
+  ],
+  
+  "Literature & Poetry": [
+    "The Works of Ralph Waldo Emerson Volume 2", 
+    "Emily Dickinson_Complete Poems",
+    "Voltaire_Candide", 
+    "Herman Melville_Moby Dick",
+    "Johann Wolfgang von Goethe_Faust 1 and 2-Egmont-Natural Daughter-Sorrows of Young Werther",
+    "Alexandre Dumas_The Count of Monte Cristo_Volume 1 [345 pages]",
+    "Alexandre Dumas_The Count of Monte Cristo_Volume 2 [336 pages]",
+    "Alexandre Dumas_The Count of Monte Cristo_Volume 3 [347 pages]",
+    "Alexandre Dumas_The Count of Monte Cristo_Volume 4 [295 pages]",
+    "Alexandre Dumas_The Count of Monte Cristo_Volume 5 [292 pages]",
+    "Joseph Conrad_Heart of Darkness [96 pages]",
+    "Harvard Classics Vol. 17. Folk-Lore and Fable, Aesop, Grimm, Andersen [369 pages]"
+  ],
+  
+  "Science & History": [
+    "Charles Darwin_The Origin of Species Volume 1",
+    "Charles Darwin_The Origin of Species Volume 2",
+    "Franz Boas_The Mind of Primitive Man [295 pages]"
+  ],
+  
+  "Collections": [
+    "The Works of Benjamin Franklin Volume I Autobiography Letters and Misc Writings [311 pages]",
+    "Henry David Thoreau_Walden"
+  ]
+};
+
+// Next List - Items To Acquire
+const nextList = {
+  "Philosophy": [
+    "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
+    "Francis Bacon_Novum Organum [270 pages]",
+    "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
+    "David Hume_A Treatise of Human Nature",
+    "George Berkeley_The Principles of Human Knowledge",
+    "Plato_Phaedo [60 pages]",
+    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
+    "Baruch Spinoza_Ethics [244 pages]",
+    "Arthur Schopenhauer_The Basis of Morality",
+    "Friedrich Wilhelm Nietzsche_Human All Too Human",
+    "Søren Kierkegaard_Selections from the Writings of Kierkegaard",
+    "William James Pragmatism",
+    "The Law by Frédéric Bastiat",
+    "Sin in Christian Thought (Stanford Encyclopedia of Philosophy)",
+    "Treating Persons as Means (Stanford Encyclopedia of Philosophy)",
+    "Trust (Stanford Encyclopedia of Philosophy)", 
+    "Egoism (Stanford Encyclopedia of Philosophy)",
+    "Egalitarianism (Stanford Encyclopedia of Philosophy)",
+    "Respect (Stanford Encyclopedia of Philosophy)",
+    "Morality and Evolutionary Biology (Stanford Encyclopedia of Philosophy)",
+    "Desire (Stanford Encyclopedia of Philosophy)",
+    "Happiness (Stanford Encyclopedia of Philosophy)",
+    "Self-Knowledge (Stanford Encyclopedia of Philosophy)",
+    "Epistemic Self-Doubt (Stanford Encyclopedia of Philosophy)",
+    "Critical Thinking (Stanford Encyclopedia of Philosophy)",
+    "Self-Deception (Stanford Encyclopedia of Philosophy)",
+    "Intuition (Stanford Encyclopedia of Philosophy)",
+    "Rationalism vs. Empiricism (Stanford Encyclopedia of Philosophy)",
+    "The Meaning of Life (Stanford Encyclopedia of Philosophy)",
+    "Social Ontology (Stanford Encyclopedia of Philosophy)",
+    "Naturalism (Stanford Encyclopedia of Philosophy)",
+    "Progress (Stanford Encyclopedia of Philosophy)",
+    "Social Norms (Stanford Encyclopedia of Philosophy)",
+    "Anarchism (Stanford Encyclopedia of Philosophy)",
+    "Freedom of Speech (Stanford Encyclopedia of Philosophy)",
+    "Liberalism (Stanford Encyclopedia of Philosophy)",
+    "Libertarianism (Stanford Encyclopedia of Philosophy)",
+    "Neoliberalism (Stanford Encyclopedia of Philosophy)",
+    "Race (Stanford Encyclopedia of Philosophy)",
+    "Privacy (Stanford Encyclopedia of Philosophy)",
+    "Meritocracy (Stanford Encyclopedia of Philosophy)",
+    "Self-Consciousness (Stanford Encyclopedia of Philosophy)",
+    "Inner Speech (Stanford Encyclopedia of Philosophy)",
+    "Imagination (Stanford Encyclopedia of Philosophy)",
+    "Imaginative Resistance (Stanford Encyclopedia of Philosophy)",
+    "Preferences (Stanford Encyclopedia of Philosophy)",
+    "Theories of Meaning (Stanford Encyclopedia of Philosophy)",
+    "Assertion (Stanford Encyclopedia of Philosophy)",
+    "Religious Language (Stanford Encyclopedia of Philosophy)",
+    "Aesthetic Experience (Stanford Encyclopedia of Philosophy)",
+    "Beauty (Stanford Encyclopedia of Philosophy)",
+    "Transcendentalism (Stanford Encyclopedia of Philosophy)",
+    "Enlightenment (Stanford Encyclopedia of Philosophy)",
+    "Idealism (Stanford Encyclopedia of Philosophy)",
+    "Pragmatism (Stanford Encyclopedia of Philosophy)",
+    "Phenomenology (Stanford Encyclopedia of Philosophy)",
+    "Daoism (Stanford Encyclopedia of Philosophy)",
+    "Methodological Individualism (Stanford Encyclopedia of Philosophy)"
+  ],
+  
+  "Religion & Theology": [
+    "Friedrich Schleiermacher_On Religion: Speeches to Its Cultured Despisers",
+    "Blaise Pascal_Pensées",
+    "Augustine of Hippo_Confessions [351 pages]",
+    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]",
+    "Jean Meslier_Superstition In All Ages (against religion as control) [99 pages]",
+    "Watson Heston_The Freethinkers' Pictorial Text-Book [368 pages]",
+    "baron d' Paul Henri Thiry Holbach_The System of Nature [194+150 pages]",
+    "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
+    "Desiderius Erasmus_In Praise of Folly [116 pages]",
+    "Laozi_The Tao Teh King or the Tao and its Characteristics"
+  ],
+  
+  "Self-Development": [
+    "Edward Carpenter_Civilisation Its Cause and Cure",
+    "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
+    "Epictetus_Discourses",
+    "Epictetus_Fragments",
+    "William James_The Varieties of Religious Experience [522 pages]",
+    "William James_The Principles of Psychology [701 + 742 pages]",
+    "Sigmund Freud_The Interpretation of Dreams",
+    "Sigmund Freud_A General Introduction to Psychoanalysis [426 pages]",
+    "OpenStax_Psychology 2e [751 pages]"
+  ],
+  
+  "Literature & Poetry": [
+    "Mary Wollstonecraft Shelley_Frankenstein",
+    "Robert Louis Stevenson_The Strange Case of Dr Jekyll and Mr Hyde",
+    "Shakespeare: The Tempest, Much Ado, Merchant of Venice, Twelfth-Night, Julius Caesar, Macbeth, Hamlet, King Lear, Othello",
+    "Fyodor Dostoyevsky_Crime and Punishment [554 pages]",
+    "Fyodor Dostoyevsky_The Brothers Karamazov [941 pages]",
+    "Leo Tolstoy_War and Peace [1733 pages]",
+    "Charles Dickens_David Copperfield [989 pages]",
+    "Stephen Crane_The Red Badge of Courage [84 pages]",
+    "Edith Wharton_The Age of Innocence [315 pages]",
+    "Thomas Hardy_Jude the Obscure [424 pages]",
+    "Victor Hugo_Les Misérables [1805 pages]",
+    "George Orwell_1984 [182 pages]",
+    "Miguel de Cervantes Saavedra_Don Quixote [1513 pages]",
+    "Nathaniel Hawthorne_The Scarlet Letter [206 pages]",
+    "Giovanni Boccaccio_The Decameron",
+    "Homer_Iliad and Odyssey [585 pages]",
+    "Harvard Classics Vol. 40. English Poetry 1 [472 pages]",
+    "Harvard Classics Vol. 41. English Poetry 2 [502 pages]",
+    "Harvard Classics Vol. 42. English Poetry 3 [472 pages]",
+    "Harvard Classics Vol. 46. Elizabethan Drama 1 [472 pages]",
+    "Harvard Classics Vol. 47. Elizabethan Drama 2 [487 pages]",
+    "Harvard Classics Vol. 49. Epic and Saga [446 pages]",
+    "Harvard Classics Vol. 8. Nine Greek Dramas [495 pages]"
+  ],
+  
+  "Science & History": [
+    "Alexis Henri C M Clerel Tocqueville_Democracy in America [583 + 513 pages]",
+    "Charles Mackay - Extraordinary Popular Delusions",
+    "Mary Wollstonecraft_A Vindication of the Rights of Woman",
+    "Soren Kierkegaard_The Crowd is Untruth [11 pages]",
+    "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
+    "OpenStax_U.S. History [975 pages]",
+    "OpenStax_Introduction to Sociology 3e [669 pages]",
+    "OpenStax_Introduction to Anthropology [651 pages]",
+    "Adam Smith_An Inquiry Into the Nature and Causes of the Wealth of Nations [400 + 462 pages]",
+    "Jean-Jacques Rousseau_Emile",
+    "Jean-Jacques Rousseau_The Social Contract & Discourses"
+  ],
+  
+  "Practical Skills": [
+    "William Strunk Jr_The Elements of Style [51 pages]",
+    "Josephine Turck Baker_The Art of Conversation [25 pages]",
+    "Arthur Martine_Martine’s Hand-Book of Etiquette [79 pages]",
+    "Aristotle_Rhetoric [91 pages]",
+    "Allen Downey_Think Python [244 pages]",
+    "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+    "Allen B Downey and Chris Mayfield_Think Java [374 pages]",
+    "OpenStax_College Algebra 2e [1111 pages]"
+  ],
+  
+  "Collections": [
+    "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]"
+  ]
+};
+
+// Display functions for both libraries
+//function displayLibrary(lib, title) {
+//  console.log(`\n${title}\n${'='.repeat(50)}`);
+//  Object.keys(lib).forEach(category => {
+//    console.log(`\n📚 ${category.toUpperCase()}`);
+//    lib[category].forEach(item => console.log(` • ${item}`));
+//  });
+// }
+
+// Run to view both libraries
+//displayLibrary(currentLibrary, "CURRENT LIBRARY");
+// displayLibrary(nextList, "\nNEXT LIST");
+
+// Access all Ethics works
+//console.log(library["Ethics & Moral Philosophy"]);
+
+// Get all literature works
+//console.log(library["Literature & Poetry"]);
+
+// Count categories
+//console.log(`Categories: ${Object.keys(library).length}`);
+
+console.log("Hello from Hyper!");
+
+r1.question("Which grouping dost thou elect, that thy printing might commence with swiftness and grace?", function printingDecision (printingChoice){
+  
+  let programmingFocused = [
+  "Allen Downey_Think Python [244 pages]",
+  "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+  "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
+  "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
+  "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
+  "Harvard Classics Vol. 8. Nine Greek Dramas [495 pages]",
+  "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
+  "Baruch Spinoza_Ethics [244 pages]",
+  "Francis Bacon_Novum Organum [270 pages]",
+  "Aristotle_Rhetoric [91 pages]",
+  "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
+  "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]"
+  ];
+  let historyFocused = [
+  "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
+  "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
+  "Soren Kierkegaard_The Crowd is Untruth [11 pages]"
+  ];
+  let calculatedPageNumbers = [
+    
+  ]
+
+  if (printingChoice === "History Focused") {
+  console.log(historyFocused + calculatedPageNumbers)
+} else if (printingChoice === "Programming Focused") {
+  console.log(programmingFocused)
+} else {
+  console.log("No decision made.")
+}
+r1.close();
+});
+
+
+
