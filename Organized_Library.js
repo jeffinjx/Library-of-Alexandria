@@ -183,6 +183,11 @@ const nextList = {
   ],
   
   "Literature & Poetry": [
+    "Harriet Beecher Stowe_Uncle Tom’s Cabin [292 pages]",
+    "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
+    "Booker T. Washington_Up from Slavery An Autobiography [193 pages]",
+    "Frederick Douglass_My Bondage and My Freedom [340 pages]",
+    "Frederick Douglass, The Life and Times of Frederick Douglass: From 1817-1882 [329 pages]",
     "Mary Wollstonecraft Shelley_Frankenstein",
     "Robert Louis Stevenson_The Strange Case of Dr Jekyll and Mr Hyde",
     "Shakespeare: The Tempest, Much Ado, Merchant of Venice, Twelfth-Night, Julius Caesar, Macbeth, Hamlet, King Lear, Othello",
@@ -227,10 +232,14 @@ const nextList = {
     "Josephine Turck Baker_The Art of Conversation [25 pages]",
     "Arthur Martine_Martine’s Hand-Book of Etiquette [79 pages]",
     "Aristotle_Rhetoric [91 pages]",
+    "OpenStax_College Algebra 2e [1111 pages]",
     "Allen Downey_Think Python [244 pages]",
+    "Al Sweigart_Automate the Boring Stuff with Python [594 pages]",
+    "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
     "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
-    "Allen B Downey and Chris Mayfield_Think Java [374 pages]",
-    "OpenStax_College Algebra 2e [1111 pages]"
+    "Kyle Simpson_Deep Language Mechanics You Don’t Know JS (YDKJS) [960 pages]",
+    "Lydia Hallie and Addy Osmani_Learning JavaScript Design Patterns [436 pages]",
+   "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]"
   ],
   
   "Collections": [
@@ -249,27 +258,42 @@ const nextList = {
 
 console.log("Hello from Hyper!");
 
-r1.question("Which grouping dost thou elect, that thy printing might commence with swiftness and grace?", function printingDecision (printingChoice){
-  
+const promptQuestion = "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n";
+
+r1.question(promptQuestion, function printingDecision (printingChoice){
+
   let programmingFocused = [
   "Allen Downey_Think Python [244 pages]",
+  "Al Sweigart_Automate the Boring Stuff with Python [594 pages]",
+  "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
   "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+
   "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
   "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
   "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
-  "Harvard Classics Vol. 8. Nine Greek Dramas [495 pages]",
-  "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
   "Baruch Spinoza_Ethics [244 pages]",
   "Francis Bacon_Novum Organum [270 pages]",
   "Aristotle_Rhetoric [91 pages]",
   "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-  "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]",
-  "Alexis Henri C M Clerel Tocqueville_Democracy in America [583 + 513 pages]"
   ];
   let historyFocused = [
   "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
+
   "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
   "Soren Kierkegaard_The Crowd is Untruth [11 pages]"
+  ];
+  let philosophyFocused = [
+  "Francis Bacon_Novum Organum [270 pages]",
+  "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
+  "David Hume_A Treatise of Human Nature",
+  "George Berkeley_The Principles of Human Knowledge",
+  ];
+  let antislaveryFocused = [
+    "Harriet Beecher Stowe_Uncle Tom’s Cabin [292 pages]",
+    "Booker T. Washington_Up from Slavery An Autobiography [193 pages]",    
+    "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
+    "Frederick Douglass_My Bondage and My Freedom [340 pages]",
+    "Frederick Douglass, The Life and Times of Frederick Douglass: From 1817-1882 [329 pages]"
   ];
   
 function extractPageCounts(bookList) {
@@ -285,25 +309,35 @@ function extractPageCounts(bookList) {
 }
 
 let programmingPageCounts = extractPageCounts(programmingFocused);
-let historyPageCounts = extractPageCounts(historyFocused);
 const programmingTotalPages = programmingPageCounts.reduce((sum, pages) => sum + pages, 0);
+
+let historyPageCounts = extractPageCounts(historyFocused);
 const historyTotalPages = historyPageCounts.reduce((sum, pages) => sum + pages, 0);
 
-console.log("Programming Totals:", programmingPageCounts);
-console.log("History Totals:", historyPageCounts);
-console.log("Total pages in programmingFocused:", programmingTotalPages);
-console.log("Total pages in historyFocused:", historyTotalPages);
+let philosophyPageCounts = extractPageCounts(philosophyFocused);
+const philosophyTotalPages = philosophyPageCounts.reduce((sum, pages) => sum + pages, 0);
 
+let antislaveryPageCounts = extractPageCounts(antislaveryFocused);
+const antislaveryTotalPages = antislaveryPageCounts.reduce((sum, pages) => sum + pages, 0);
 
-  if (printingChoice === "History Focused") {
+  if (printingChoice === "1") {
   console.log(historyFocused)
-} else if (printingChoice === "Programming Focused") {
+  console.log("History List Totals:", historyPageCounts);
+  console.log("Total pages in History List:", historyTotalPages);
+} else if (printingChoice === "2") {
   console.log(programmingFocused)
+  console.log("Programming List Totals:", programmingPageCounts);
+  console.log("Total pages in Programming List:", programmingTotalPages);
+} else if (printingChoice === "3") {
+  console.log(philosophyFocused)
+  console.log("Philosophy List Totals:", philosophyPageCounts);
+  console.log("Total pages in Philosophy List:", philosophyTotalPages);
+} else if (printingChoice === "4") {
+  console.log(antislaveryFocused)
+  console.log("Anti-Slavery List Totals:", antislaveryPageCounts);
+  console.log("Total pages in Anti-Slavery List:", antislaveryTotalPages);
 } else {
-  console.log("No decision made.")
+  console.log(".")
 }
 r1.close();
 });
-
-
-
