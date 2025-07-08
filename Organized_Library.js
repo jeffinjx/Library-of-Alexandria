@@ -100,8 +100,8 @@ const nextList = {
     "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
     "Francis Bacon_Novum Organum [270 pages]",
     "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
-    "David Hume_A Treatise of Human Nature",
-    "George Berkeley_The Principles of Human Knowledge",
+    "David Hume_A Treatise of Human Nature [600 pages]",
+    "George Berkeley_The Principles of Human Knowledge [63 pages]",
     "Plato_Phaedo [60 pages]",
     "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
     "Baruch Spinoza_Ethics [244 pages]",
@@ -183,6 +183,8 @@ const nextList = {
   ],
   
   "Literature & Poetry": [
+    "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
+    "Jack London_The Iron Heel [190 pages]",
     "Harriet Beecher Stowe_Uncle Tom’s Cabin [292 pages]",
     "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
     "Booker T. Washington_Up from Slavery An Autobiography [193 pages]",
@@ -239,7 +241,7 @@ const nextList = {
     "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
     "Kyle Simpson_Deep Language Mechanics You Don’t Know JS (YDKJS) [960 pages]",
     "Lydia Hallie and Addy Osmani_Learning JavaScript Design Patterns [436 pages]",
-   "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]"
+    "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]"
   ],
   
   "Collections": [
@@ -258,7 +260,7 @@ const nextList = {
 
 console.log("Hello from Hyper!");
 
-const promptQuestion = "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n";
+const promptQuestion = "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n5. Mix Focused\n";
 
 r1.question(promptQuestion, function printingDecision (printingChoice){
 
@@ -267,7 +269,15 @@ r1.question(promptQuestion, function printingDecision (printingChoice){
   "Al Sweigart_Automate the Boring Stuff with Python [594 pages]",
   "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
   "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
-
+  ];
+  let historyFocused = [
+  "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
+  ];
+  let philosophyFocused = [
+  "Francis Bacon_Novum Organum [270 pages]",
+  "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
+  "David Hume_A Treatise of Human Nature [600 pages]",
+  "George Berkeley_The Principles of Human Knowledge [63 pages]",
   "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
   "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
   "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
@@ -275,25 +285,17 @@ r1.question(promptQuestion, function printingDecision (printingChoice){
   "Francis Bacon_Novum Organum [270 pages]",
   "Aristotle_Rhetoric [91 pages]",
   "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-  ];
-  let historyFocused = [
-  "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
-
-  "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-  "Soren Kierkegaard_The Crowd is Untruth [11 pages]"
-  ];
-  let philosophyFocused = [
-  "Francis Bacon_Novum Organum [270 pages]",
-  "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
-  "David Hume_A Treatise of Human Nature",
-  "George Berkeley_The Principles of Human Knowledge",
+  "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]"
   ];
   let antislaveryFocused = [
     "Harriet Beecher Stowe_Uncle Tom’s Cabin [292 pages]",
-    "Booker T. Washington_Up from Slavery An Autobiography [193 pages]",    
     "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
     "Frederick Douglass_My Bondage and My Freedom [340 pages]",
-    "Frederick Douglass, The Life and Times of Frederick Douglass: From 1817-1882 [329 pages]"
+  ];
+  let mixFocused = [
+    antislaveryFocused,
+    programmingFocused,
+    "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]"
   ];
   
 function extractPageCounts(bookList) {
@@ -320,6 +322,10 @@ const philosophyTotalPages = philosophyPageCounts.reduce((sum, pages) => sum + p
 let antislaveryPageCounts = extractPageCounts(antislaveryFocused);
 const antislaveryTotalPages = antislaveryPageCounts.reduce((sum, pages) => sum + pages, 0);
 
+let flatMixFocused = mixFocused.flat();
+let mixPageCounts = extractPageCounts(flatMixFocused);
+const mixTotalPages = mixPageCounts.reduce((sum, pages) => sum + pages, 0);
+
   if (printingChoice === "1") {
   console.log(historyFocused)
   console.log("History List Totals:", historyPageCounts);
@@ -336,6 +342,10 @@ const antislaveryTotalPages = antislaveryPageCounts.reduce((sum, pages) => sum +
   console.log(antislaveryFocused)
   console.log("Anti-Slavery List Totals:", antislaveryPageCounts);
   console.log("Total pages in Anti-Slavery List:", antislaveryTotalPages);
+} else if (printingChoice === "5") {
+  console.log(mixFocused)
+  console.log("Mix List Totals:", mixPageCounts);
+  console.log("Total pages in Mix List:", mixTotalPages); 
 } else {
   console.log(".")
 }
