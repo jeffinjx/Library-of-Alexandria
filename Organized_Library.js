@@ -1,12 +1,12 @@
-const readline = require('readline');
+const readline = require("readline");
 const r1 = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 // Current Library - Items I Own
 const currentLibrary = {
-  "Philosophy": [
+  Philosophy: [
     "Plato_Republic",
     "Plato_Protagoras",
     "Plato_Apology",
@@ -20,15 +20,15 @@ const currentLibrary = {
     "Titus Lucretius Carus_Of The Nature of Things",
     "Boethius_The Consolation of Philosophy",
     "Introduction to Philosophy: Ethics Rebus Community",
-    "John Stuart Mill_On Liberty", 
+    "John Stuart Mill_On Liberty",
     "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 1",
     "Fyodor Dostoyevsky_Notes from the Underground",
     "Friedrich Wilhelm Nietzsche_Beyond Good and Evil",
     "Friedrich Wilhelm Nietzsche_Thus Spake Zarathustra",
-    "Nicolo Machiavelli_The Prince", 
+    "Nicolo Machiavelli_The Prince",
     "John Locke_The Two Treatises of Civil Government",
     "Étienne De La Boétie_Slaves By Choice",
-    "ForallxCalgary", 
+    "ForallxCalgary",
     "Classical Logic (Stanford Encyclopedia of Philosophy)",
     "Informal Logic (Stanford Encyclopedia of Philosophy)",
     "Epistemology (Stanford Encyclopedia of Philosophy)",
@@ -45,32 +45,32 @@ const currentLibrary = {
     "Stoicism (Stanford Encyclopedia of Philosophy)",
     "Critical Theory (Frankfurt School) (Stanford Encyclopedia of Philosophy)",
     "Reasons for Action: Justification, Motivation, Explanation (Stanford Encyclopedia of Philosophy)",
-    "Aristotle (Stanford Encyclopedia of Philosophy)"
+    "Aristotle (Stanford Encyclopedia of Philosophy)",
   ],
-  
+
   "Religion & Theology": [
     "David Hume_The Natural History of Religion",
     "Ludwig Feuerbach_The Essence of Christianity",
     "Philosophy of Religion (Stanford Encyclopedia of Philosophy)",
-    "John Bunyan_The Pilgrim’s progress [252 pages]"
+    "John Bunyan_The Pilgrim’s progress [252 pages]",
   ],
-  
+
   "Self-Development": [
-    "Marcus Aurelius_Meditations", 
+    "Marcus Aurelius_Meditations",
     "Musashi Miyamoto_The Book of Five Rings",
-    "Sun Tzu_The Art of War", 
+    "Sun Tzu_The Art of War",
     "Baltasar Gracián_The Art of Worldly Wisdom",
-    "Epictetus_The Enchiridion", 
+    "Epictetus_The Enchiridion",
     "Samuel Smiles_Self-Help [209 pages]",
     "Personal Autonomy (Stanford Encyclopedia of Philosophy)",
     "Agency (Stanford Encyclopedia of Philosophy)",
     "Michel de Montaigne_Essays of Michel de Montaigne—Complete [1267 pages]",
   ],
-  
+
   "Literature & Poetry": [
-    "The Works of Ralph Waldo Emerson Volume 2", 
+    "The Works of Ralph Waldo Emerson Volume 2",
     "Emily Dickinson_Complete Poems",
-    "Voltaire_Candide", 
+    "Voltaire_Candide",
     "Herman Melville_Moby Dick",
     "Johann Wolfgang von Goethe_Faust 1 and 2-Egmont-Natural Daughter-Sorrows of Young Werther",
     "Alexandre Dumas_The Count of Monte Cristo_Volume 1 [345 pages]",
@@ -79,27 +79,34 @@ const currentLibrary = {
     "Alexandre Dumas_The Count of Monte Cristo_Volume 4 [295 pages]",
     "Alexandre Dumas_The Count of Monte Cristo_Volume 5 [292 pages]",
     "Joseph Conrad_Heart of Darkness [96 pages]",
-    "Harvard Classics Vol. 17. Folk-Lore and Fable, Aesop, Grimm, Andersen [369 pages]"
+    "Harvard Classics Vol. 17. Folk-Lore and Fable, Aesop, Grimm, Andersen [369 pages]",
   ],
-  
+
   "Science & History": [
     "Charles Darwin_The Origin of Species Volume 1",
     "Charles Darwin_The Origin of Species Volume 2",
-    "Franz Boas_The Mind of Primitive Man [295 pages]"
+    "Franz Boas_The Mind of Primitive Man [295 pages]",
+    "The Constitution of The Unted States of America [19 pages]",
+    "United States Declaration of Independence [5 pages]",
   ],
-  
-  "Collections": [
+
+  "Practical Skills": [
+    "Allen Downey_Think Python [244 pages]",
+    "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+  ],
+
+  Collections: [
     "The Works of Benjamin Franklin Volume I Autobiography Letters and Misc Writings [311 pages]",
-    "Henry David Thoreau_Walden"
-  ]
+    "Henry David Thoreau_Walden",
+  ],
 };
 
 // Next List - Items To Acquire
 const nextList = {
-  "Philosophy": [
+  Philosophy: [
     "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
     "Francis Bacon_Novum Organum [270 pages]",
-    "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
+    "René Descartes_Discourse on the Method [294 pages]",
     "David Hume_A Treatise of Human Nature [600 pages]",
     "George Berkeley_The Principles of Human Knowledge [63 pages]",
     "Plato_Phaedo [60 pages]",
@@ -112,7 +119,7 @@ const nextList = {
     "The Law by Frédéric Bastiat",
     "Sin in Christian Thought (Stanford Encyclopedia of Philosophy)",
     "Treating Persons as Means (Stanford Encyclopedia of Philosophy)",
-    "Trust (Stanford Encyclopedia of Philosophy)", 
+    "Trust (Stanford Encyclopedia of Philosophy)",
     "Egoism (Stanford Encyclopedia of Philosophy)",
     "Egalitarianism (Stanford Encyclopedia of Philosophy)",
     "Respect (Stanford Encyclopedia of Philosophy)",
@@ -154,9 +161,9 @@ const nextList = {
     "Pragmatism (Stanford Encyclopedia of Philosophy)",
     "Phenomenology (Stanford Encyclopedia of Philosophy)",
     "Daoism (Stanford Encyclopedia of Philosophy)",
-    "Methodological Individualism (Stanford Encyclopedia of Philosophy)"
+    "Methodological Individualism (Stanford Encyclopedia of Philosophy)",
   ],
-  
+
   "Religion & Theology": [
     "Friedrich Schleiermacher_On Religion: Speeches to Its Cultured Despisers",
     "Blaise Pascal_Pensées",
@@ -167,9 +174,9 @@ const nextList = {
     "baron d' Paul Henri Thiry Holbach_The System of Nature [194+150 pages]",
     "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
     "Desiderius Erasmus_In Praise of Folly [116 pages]",
-    "Laozi_The Tao Teh King or the Tao and its Characteristics"
+    "Laozi_The Tao Teh King or the Tao and its Characteristics",
   ],
-  
+
   "Self-Development": [
     "Edward Carpenter_Civilisation Its Cause and Cure",
     "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
@@ -179,9 +186,9 @@ const nextList = {
     "William James_The Principles of Psychology [701 + 742 pages]",
     "Sigmund Freud_The Interpretation of Dreams",
     "Sigmund Freud_A General Introduction to Psychoanalysis [426 pages]",
-    "OpenStax_Psychology 2e [751 pages]"
+    "OpenStax_Psychology 2e [751 pages]",
   ],
-  
+
   "Literature & Poetry": [
     "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
     "Jack London_The Iron Heel [190 pages]",
@@ -212,9 +219,9 @@ const nextList = {
     "Harvard Classics Vol. 46. Elizabethan Drama 1 [472 pages]",
     "Harvard Classics Vol. 47. Elizabethan Drama 2 [487 pages]",
     "Harvard Classics Vol. 49. Epic and Saga [446 pages]",
-    "Harvard Classics Vol. 8. Nine Greek Dramas [495 pages]"
+    "Harvard Classics Vol. 8. Nine Greek Dramas [495 pages]",
   ],
-  
+
   "Science & History": [
     "Alexis Henri C M Clerel Tocqueville_Democracy in America [583 + 513 pages]",
     "Charles Mackay - Extraordinary Popular Delusions",
@@ -226,9 +233,9 @@ const nextList = {
     "OpenStax_Introduction to Anthropology [651 pages]",
     "Adam Smith_An Inquiry Into the Nature and Causes of the Wealth of Nations [400 + 462 pages]",
     "Jean-Jacques Rousseau_Emile",
-    "Jean-Jacques Rousseau_The Social Contract & Discourses"
+    "Jean-Jacques Rousseau_The Social Contract & Discourses",
   ],
-  
+
   "Practical Skills": [
     "William Strunk Jr_The Elements of Style [51 pages]",
     "Josephine Turck Baker_The Art of Conversation [25 pages]",
@@ -241,12 +248,12 @@ const nextList = {
     "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
     "Kyle Simpson_Deep Language Mechanics You Don’t Know JS (YDKJS) [960 pages]",
     "Lydia Hallie and Addy Osmani_Learning JavaScript Design Patterns [436 pages]",
-    "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]"
+    "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]",
   ],
-  
-  "Collections": [
-    "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]"
-  ]
+
+  Collections: [
+    "Arthur Schopenhauer_The World As Will And Idea [550 + 506 + 408 pages]",
+  ],
 };
 
 // Display functions for both libraries
@@ -260,94 +267,121 @@ const nextList = {
 
 console.log("Hello from Hyper!");
 
-const promptQuestion = "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n5. Mix Focused\n";
+const promptQuestion =
+  "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n5. Mix Focused\n6. Check Current Prints\n";
 
-r1.question(promptQuestion, function printingDecision (printingChoice){
-
+r1.question(promptQuestion, function printingDecision(printingChoice) {
   let programmingFocused = [
-  "Allen Downey_Think Python [244 pages]",
-  "Al Sweigart_Automate the Boring Stuff with Python [594 pages]",
-  "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
-  "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+    "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
   ];
   let historyFocused = [
-  "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
+    "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   ];
   let philosophyFocused = [
-  "Francis Bacon_Novum Organum [270 pages]",
-  "René Descartes_Discourse on the Method (emphasizes individual reason) [294 pages]",
-  "David Hume_A Treatise of Human Nature [600 pages]",
-  "George Berkeley_The Principles of Human Knowledge [63 pages]",
-  "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
-  "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
-  "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
-  "Baruch Spinoza_Ethics [244 pages]",
-  "Francis Bacon_Novum Organum [270 pages]",
-  "Aristotle_Rhetoric [91 pages]",
-  "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-  "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]"
+    "Francis Bacon_Novum Organum [270 pages]",
+    "René Descartes_Discourse on the Method [294 pages]",
+    "David Hume_A Treatise of Human Nature [600 pages]",
+    "George Berkeley_The Principles of Human Knowledge [63 pages]",
+    "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
+    "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
+    "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
+    "Baruch Spinoza_Ethics [244 pages]",
+    "Francis Bacon_Novum Organum [270 pages]",
+    "Aristotle_Rhetoric [91 pages]",
+    "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
+    "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
   ];
   let antislaveryFocused = [
-    "Harriet Beecher Stowe_Uncle Tom’s Cabin [292 pages]",
-    "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
     "Frederick Douglass_My Bondage and My Freedom [340 pages]",
   ];
   let mixFocused = [
     antislaveryFocused,
     programmingFocused,
-    "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]"
+    "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
+    "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
+    "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
+    "William James_The Principles of Psychology [701 + 742 pages]",
   ];
-  
-function extractPageCounts(bookList) {
-  return bookList.map(entry => {
-    const match = entry.match(/\[(.+?)\s*pages\]/);
-    if (match) {
-      const parts = match[1].split('+').map(s => parseInt(s.trim(), 10));
-      const sum = parts.reduce((acc, val) => acc + (isNaN(val) ? 0 : val), 0);
-      return sum;
-    }
-    return 0;
-  });
-}
+  let done = [
+    "Allen Downey_Think Python [244 pages]",
+    "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+    "The Constitution of The Unted States of America [19 pages]",
+    "United States Declaration of Independence [5 pages]",
+    "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
+  ];
 
-let programmingPageCounts = extractPageCounts(programmingFocused);
-const programmingTotalPages = programmingPageCounts.reduce((sum, pages) => sum + pages, 0);
+  function extractPageCounts(bookList) {
+    return bookList.map((entry) => {
+      const match = entry.match(/\[(.+?)\s*pages\]/);
+      if (match) {
+        const parts = match[1].split("+").map((s) => parseInt(s.trim(), 10));
+        const sum = parts.reduce((acc, val) => acc + (isNaN(val) ? 0 : val), 0);
+        return sum;
+      }
+      return 0;
+    });
+  }
 
-let historyPageCounts = extractPageCounts(historyFocused);
-const historyTotalPages = historyPageCounts.reduce((sum, pages) => sum + pages, 0);
+  let programmingPageCounts = extractPageCounts(programmingFocused);
+  const programmingTotalPages = programmingPageCounts.reduce(
+    (sum, pages) => sum + pages,
+    0
+  );
 
-let philosophyPageCounts = extractPageCounts(philosophyFocused);
-const philosophyTotalPages = philosophyPageCounts.reduce((sum, pages) => sum + pages, 0);
+  let historyPageCounts = extractPageCounts(historyFocused);
+  const historyTotalPages = historyPageCounts.reduce(
+    (sum, pages) => sum + pages,
+    0
+  );
 
-let antislaveryPageCounts = extractPageCounts(antislaveryFocused);
-const antislaveryTotalPages = antislaveryPageCounts.reduce((sum, pages) => sum + pages, 0);
+  let philosophyPageCounts = extractPageCounts(philosophyFocused);
+  const philosophyTotalPages = philosophyPageCounts.reduce(
+    (sum, pages) => sum + pages,
+    0
+  );
 
-let flatMixFocused = mixFocused.flat();
-let mixPageCounts = extractPageCounts(flatMixFocused);
-const mixTotalPages = mixPageCounts.reduce((sum, pages) => sum + pages, 0);
+  let antislaveryPageCounts = extractPageCounts(antislaveryFocused);
+  const antislaveryTotalPages = antislaveryPageCounts.reduce(
+    (sum, pages) => sum + pages,
+    0
+  );
+
+  let donePageCounts = extractPageCounts(done);
+  const doneTotalPages = donePageCounts.reduce((sum, pages) => sum + pages, 0);
+
+  let flatMixFocused = mixFocused.flat();
+  let mixPageCounts = extractPageCounts(flatMixFocused);
+  const mixTotalPages = mixPageCounts.reduce((sum, pages) => sum + pages, 0);
 
   if (printingChoice === "1") {
-  console.log(historyFocused)
-  console.log("History List Totals:", historyPageCounts);
-  console.log("Total pages in History List:", historyTotalPages);
-} else if (printingChoice === "2") {
-  console.log(programmingFocused)
-  console.log("Programming List Totals:", programmingPageCounts);
-  console.log("Total pages in Programming List:", programmingTotalPages);
-} else if (printingChoice === "3") {
-  console.log(philosophyFocused)
-  console.log("Philosophy List Totals:", philosophyPageCounts);
-  console.log("Total pages in Philosophy List:", philosophyTotalPages);
-} else if (printingChoice === "4") {
-  console.log(antislaveryFocused)
-  console.log("Anti-Slavery List Totals:", antislaveryPageCounts);
-  console.log("Total pages in Anti-Slavery List:", antislaveryTotalPages);
-} else if (printingChoice === "5") {
-  console.log(mixFocused)
-  console.log("Mix List Totals:", mixPageCounts);
-  console.log("Total pages in Mix List:", mixTotalPages); 
-} else {
-  console.log(".")
-}
-r1.close();
+    console.log(historyFocused);
+    console.log("History List Totals:", historyPageCounts);
+    console.log("Total pages in History List:", historyTotalPages);
+  }
+  if (printingChoice === "2") {
+    console.log(programmingFocused);
+    console.log("Programming List Totals:", programmingPageCounts);
+    console.log("Total pages in Programming List:", programmingTotalPages);
+  }
+  if (printingChoice === "3") {
+    console.log(philosophyFocused);
+    console.log("Philosophy List Totals:", philosophyPageCounts);
+    console.log("Total pages in Philosophy List:", philosophyTotalPages);
+  }
+  if (printingChoice === "4") {
+    console.log(antislaveryFocused);
+    console.log("Anti-Slavery List Totals:", antislaveryPageCounts);
+    console.log("Total pages in Anti-Slavery List:", antislaveryTotalPages);
+  }
+  if (printingChoice === "5") {
+    console.log(mixFocused);
+    console.log("Mix List Totals:", mixPageCounts);
+    console.log("Total pages in Mix List:", mixTotalPages);
+  }
+  if (printingChoice === "6") {
+    console.log(done);
+    console.log("Done Totals:", donePageCounts);
+    console.log("Total pages done:", doneTotalPages);
+  }
+  r1.close();
 });
