@@ -46,6 +46,7 @@ const currentLibrary = {
     "Critical Theory (Frankfurt School) (Stanford Encyclopedia of Philosophy)",
     "Reasons for Action: Justification, Motivation, Explanation (Stanford Encyclopedia of Philosophy)",
     "Aristotle (Stanford Encyclopedia of Philosophy)",
+    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]"
   ],
 
   "Religion & Theology": [
@@ -80,6 +81,8 @@ const currentLibrary = {
     "Alexandre Dumas_The Count of Monte Cristo_Volume 5 [292 pages]",
     "Joseph Conrad_Heart of Darkness [96 pages]",
     "Harvard Classics Vol. 17. Folk-Lore and Fable, Aesop, Grimm, Andersen [369 pages]",
+    "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
+    "Frederick Douglass_My Bondage and My Freedom [340 pages]"
   ],
 
   "Science & History": [
@@ -151,7 +154,6 @@ const nextList = {
     "Imaginative Resistance (Stanford Encyclopedia of Philosophy)",
     "Preferences (Stanford Encyclopedia of Philosophy)",
     "Theories of Meaning (Stanford Encyclopedia of Philosophy)",
-    "Assertion (Stanford Encyclopedia of Philosophy)",
     "Religious Language (Stanford Encyclopedia of Philosophy)",
     "Aesthetic Experience (Stanford Encyclopedia of Philosophy)",
     "Beauty (Stanford Encyclopedia of Philosophy)",
@@ -162,6 +164,11 @@ const nextList = {
     "Phenomenology (Stanford Encyclopedia of Philosophy)",
     "Daoism (Stanford Encyclopedia of Philosophy)",
     "Methodological Individualism (Stanford Encyclopedia of Philosophy)",
+
+    "Assertion (Stanford Encyclopedia of Philosophy) [36 pages]",
+    "Domination (Stanford Encyclopedia of Philosophy) [18 pages]",
+    "Modesty and Humility (Stanford Encyclopedia of Philosophy) [13 pages]",
+    "Friendship (Stanford Encyclopedia of Philosophy) [17 pagees]"
   ],
 
   "Religion & Theology": [
@@ -192,11 +199,8 @@ const nextList = {
   "Literature & Poetry": [
     "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
     "Jack London_The Iron Heel [190 pages]",
+    "George Orwell_1984 [182 pages]",
     "Harriet Beecher Stowe_Uncle Tom’s Cabin [292 pages]",
-    "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
-    "Booker T. Washington_Up from Slavery An Autobiography [193 pages]",
-    "Frederick Douglass_My Bondage and My Freedom [340 pages]",
-    "Frederick Douglass, The Life and Times of Frederick Douglass: From 1817-1882 [329 pages]",
     "Mary Wollstonecraft Shelley_Frankenstein",
     "Robert Louis Stevenson_The Strange Case of Dr Jekyll and Mr Hyde",
     "Shakespeare: The Tempest, Much Ado, Merchant of Venice, Twelfth-Night, Julius Caesar, Macbeth, Hamlet, King Lear, Othello",
@@ -242,13 +246,16 @@ const nextList = {
     "Arthur Martine_Martine’s Hand-Book of Etiquette [79 pages]",
     "Aristotle_Rhetoric [91 pages]",
     "OpenStax_College Algebra 2e [1111 pages]",
-    "Allen Downey_Think Python [244 pages]",
     "Al Sweigart_Automate the Boring Stuff with Python [594 pages]",
     "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
-    "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
     "Kyle Simpson_Deep Language Mechanics You Don’t Know JS (YDKJS) [960 pages]",
     "Lydia Hallie and Addy Osmani_Learning JavaScript Design Patterns [436 pages]",
     "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]",
+    "Genevieve Stebbins_Delsarte system of expression [310 pages]",
+    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]",
+    "Irvah Lester Winter_Public Speaking Principles and Practice [419 pages]",
+    "J.H. McIlvaine_Elocution The Sources and Elements of Its Power [412 pages]",
+    "Rollo Anson Tallcott_The Art of Acting and Public Reading Dramatic Interpretation [250 pages]"
   ],
 
   Collections: [
@@ -272,35 +279,26 @@ const promptQuestion =
 
 r1.question(promptQuestion, function printingDecision(printingChoice) {
   let programmingFocused = [
-    "Brad Miller and David Ranum_Problem Solving with Algorithms and Data Structures [240 pages]",
+    "Nill."
+  ];
+  let antislaveryFocused = [
+    "Nill."
   ];
   let historyFocused = [
     "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   ];
   let philosophyFocused = [
-    "Francis Bacon_Novum Organum [270 pages]",
     "René Descartes_Discourse on the Method [294 pages]",
-    "David Hume_A Treatise of Human Nature [600 pages]",
-    "George Berkeley_The Principles of Human Knowledge [63 pages]",
-    "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
     "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
-    "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
     "Baruch Spinoza_Ethics [244 pages]",
     "Francis Bacon_Novum Organum [270 pages]",
-    "Aristotle_Rhetoric [91 pages]",
     "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-    "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
-  ];
-  let antislaveryFocused = [
-    "Frederick Douglass_My Bondage and My Freedom [340 pages]",
   ];
   let mixFocused = [
     antislaveryFocused,
     programmingFocused,
-    "Gilbert K. Chesterton_The Napoleon of Notting Hill [111 pages]",
-    "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
-    "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
-    "William James_The Principles of Psychology [701 + 742 pages]",
+    philosophyFocused,
+    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]"
   ];
   let done = [
     "Allen Downey_Think Python [244 pages]",
@@ -308,6 +306,8 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "The Constitution of The Unted States of America [19 pages]",
     "United States Declaration of Independence [5 pages]",
     "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
+    "Frederick Douglass_My Bondage and My Freedom [340 pages]",
+    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]"
   ];
 
   function extractPageCounts(bookList) {
