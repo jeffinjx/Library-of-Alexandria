@@ -289,7 +289,6 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
   ];
   let philosophyFocused = [
     "René Descartes_Discourse on the Method [294 pages]",
-    "Søren Kierkegaard_The Crowd is Untruth [11 pages]",
     "Baruch Spinoza_Ethics [244 pages]",
     "Francis Bacon_Novum Organum [270 pages]",
     "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
