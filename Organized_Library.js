@@ -115,7 +115,7 @@ const nextList = {
     "George Berkeley_The Principles of Human Knowledge [63 pages]",
     "Plato_Phaedo [60 pages]",
     "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
-    "Baruch Spinoza_Ethics [244 pages]",
+    "Baruch Spinoza_Ethics [145 pages]",
     "Arthur Schopenhauer_The Basis of Morality",
     "Friedrich Wilhelm Nietzsche_Human All Too Human",
     "Søren Kierkegaard_Selections from the Writings of Kierkegaard",
@@ -190,7 +190,6 @@ const nextList = {
     "Desiderius Erasmus_In Praise of Folly [116 pages]",
     "Laozi_The Tao Teh King or the Tao and its Characteristics",
     "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]",
-    "Anatole France_The Revolt of the Angels [131 pages]"
   ],
 
   "Self-Development": [
@@ -297,16 +296,15 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   ];
   let philosophyFocused = [
-    "René Descartes_Discourse on the Method [51 pages]",
-    "Francis Bacon_Novum Organum [164 pages]",
-    "Arthur Schopenhauer_The Art of Controversy [41 pages]",
     "John Locke_A Letter concerning Toleration and Other Writings [24 pages]",
-    "Baruch Spinoza_On the Improvement of the Understanding [27 pages]"
+    "Francis Bacon_Novum Organum [164 pages]",
+    "René Descartes_Discourse on the Method [51 pages]",
+    "Arthur Schopenhauer_The Art of Controversy [41 pages]",
+    "Baruch Spinoza_On the Improvement of the Understanding [27 pages]",
+    "Baruch Spinoza_Ethics [145 pages]"
   ];
   let mixFocused = [
     philosophyFocused,
-    "Epictetus_Discourses [383 pages]",
-    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]"
   ];
   let done = [
     "Allen Downey_Think Python [244 pages]",
@@ -316,7 +314,8 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
     "Frederick Douglass_My Bondage and My Freedom [340 pages]",
     "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
-    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]"
+    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]",
+    "Epictetus_Discourses [383 pages]"
   ];
 
   function extractPageCounts(bookList) {
