@@ -96,6 +96,7 @@ const currentLibrary = {
   "Practical Skills": [
     "Allen Downey_Think Python [244 pages]",
     "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
+    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]"
   ],
 
   Collections: [
@@ -164,11 +165,17 @@ const nextList = {
     "Phenomenology (Stanford Encyclopedia of Philosophy)",
     "Daoism (Stanford Encyclopedia of Philosophy)",
     "Methodological Individualism (Stanford Encyclopedia of Philosophy)",
-
     "Assertion (Stanford Encyclopedia of Philosophy) [36 pages]",
     "Domination (Stanford Encyclopedia of Philosophy) [18 pages]",
     "Modesty and Humility (Stanford Encyclopedia of Philosophy) [13 pages]",
-    "Friendship (Stanford Encyclopedia of Philosophy) [17 pagees]"
+    "Friendship (Stanford Encyclopedia of Philosophy) [17 pagees]",
+    "Aristotle’s Rhetoric (Stanford Encyclopedia of Philosophy) [21 pages]",
+    "Jean-Jacques Rousseau_The Social Contract & Discourses [312 pages]",
+    "Charles W. Eliot_The Conflict Between Individualism and Collectivism in a Democracy [136 pages]",
+    "Arthur Schopenhauer_The Art of Controversy [41 pages]",
+    "William James_The Will to Believe and Other Essays in Popular Philosophy [272 pages]",
+    "John Locke_A Letter concerning Toleration and Other Writings [24 pages]",
+    "Baruch Spinoza_On the Improvement of the Understanding [27 pages]"
   ],
 
   "Religion & Theology": [
@@ -176,18 +183,20 @@ const nextList = {
     "Blaise Pascal_Pensées",
     "Augustine of Hippo_Confessions [351 pages]",
     "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]",
-    "Jean Meslier_Superstition In All Ages (against religion as control) [99 pages]",
+    "Jean Meslier_Superstition In All Ages [99 pages]",
     "Watson Heston_The Freethinkers' Pictorial Text-Book [368 pages]",
     "baron d' Paul Henri Thiry Holbach_The System of Nature [194+150 pages]",
     "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
     "Desiderius Erasmus_In Praise of Folly [116 pages]",
     "Laozi_The Tao Teh King or the Tao and its Characteristics",
+    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]",
+    "Anatole France_The Revolt of the Angels [131 pages]"
   ],
 
   "Self-Development": [
     "Edward Carpenter_Civilisation Its Cause and Cure",
     "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-    "Epictetus_Discourses",
+    "Epictetus_Discourses [383 pages]",
     "Epictetus_Fragments",
     "William James_The Varieties of Religious Experience [522 pages]",
     "William James_The Principles of Psychology [701 + 742 pages]",
@@ -236,8 +245,7 @@ const nextList = {
     "OpenStax_Introduction to Sociology 3e [669 pages]",
     "OpenStax_Introduction to Anthropology [651 pages]",
     "Adam Smith_An Inquiry Into the Nature and Causes of the Wealth of Nations [400 + 462 pages]",
-    "Jean-Jacques Rousseau_Emile",
-    "Jean-Jacques Rousseau_The Social Contract & Discourses",
+    "Mary Antin_The Promised Land [324 pages]"
   ],
 
   "Practical Skills": [
@@ -255,7 +263,8 @@ const nextList = {
     "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]",
     "Irvah Lester Winter_Public Speaking Principles and Practice [419 pages]",
     "J.H. McIlvaine_Elocution The Sources and Elements of Its Power [412 pages]",
-    "Rollo Anson Tallcott_The Art of Acting and Public Reading Dramatic Interpretation [250 pages]"
+    "Rollo Anson Tallcott_The Art of Acting and Public Reading Dramatic Interpretation [250 pages]",
+    "Alexander Melville Bell_The Principles of Elocution [256 pages]"
   ],
 
   Collections: [
@@ -288,16 +297,16 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   ];
   let philosophyFocused = [
-    "René Descartes_Discourse on the Method [294 pages]",
-    "Baruch Spinoza_Ethics [244 pages]",
-    "Francis Bacon_Novum Organum [270 pages]",
-    "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
+    "René Descartes_Discourse on the Method [51 pages]",
+    "Francis Bacon_Novum Organum [164 pages]",
+    "Arthur Schopenhauer_The Art of Controversy [41 pages]",
+    "John Locke_A Letter concerning Toleration and Other Writings [24 pages]",
+    "Baruch Spinoza_On the Improvement of the Understanding [27 pages]"
   ];
   let mixFocused = [
-    antislaveryFocused,
-    programmingFocused,
     philosophyFocused,
-    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]"
+    "Epictetus_Discourses [383 pages]",
+    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]"
   ];
   let done = [
     "Allen Downey_Think Python [244 pages]",
@@ -306,7 +315,8 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "United States Declaration of Independence [5 pages]",
     "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
     "Frederick Douglass_My Bondage and My Freedom [340 pages]",
-    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]"
+    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
+    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]"
   ];
 
   function extractPageCounts(bookList) {
