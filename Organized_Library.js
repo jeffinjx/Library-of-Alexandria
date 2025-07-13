@@ -66,6 +66,7 @@ const currentLibrary = {
     "Personal Autonomy (Stanford Encyclopedia of Philosophy)",
     "Agency (Stanford Encyclopedia of Philosophy)",
     "Michel de Montaigne_Essays of Michel de Montaigne—Complete [1267 pages]",
+    "Epictetus_Discourses [383 pages]"
   ],
 
   "Literature & Poetry": [
@@ -114,7 +115,6 @@ const nextList = {
     "David Hume_A Treatise of Human Nature [600 pages]",
     "George Berkeley_The Principles of Human Knowledge [63 pages]",
     "Plato_Phaedo [60 pages]",
-    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
     "Baruch Spinoza_Ethics [145 pages]",
     "Arthur Schopenhauer_The Basis of Morality",
     "Friedrich Wilhelm Nietzsche_Human All Too Human",
@@ -174,7 +174,7 @@ const nextList = {
     "Charles W. Eliot_The Conflict Between Individualism and Collectivism in a Democracy [136 pages]",
     "Arthur Schopenhauer_The Art of Controversy [41 pages]",
     "William James_The Will to Believe and Other Essays in Popular Philosophy [272 pages]",
-    "John Locke_A Letter concerning Toleration and Other Writings [24 pages]",
+    "John Locke_A Letter concerning Toleration [24 pages]",
     "Baruch Spinoza_On the Improvement of the Understanding [27 pages]"
   ],
 
@@ -195,7 +195,6 @@ const nextList = {
   "Self-Development": [
     "Edward Carpenter_Civilisation Its Cause and Cure",
     "Seneca_The Epistles of Lucius Annaeus Seneca_Volume 2 [374 pages]",
-    "Epictetus_Discourses [383 pages]",
     "Epictetus_Fragments",
     "William James_The Varieties of Religious Experience [522 pages]",
     "William James_The Principles of Psychology [701 + 742 pages]",
@@ -259,7 +258,6 @@ const nextList = {
     "Lydia Hallie and Addy Osmani_Learning JavaScript Design Patterns [436 pages]",
     "Brian Lonsdorf_Mostly Adequate Guide to FP [79 pages]",
     "Genevieve Stebbins_Delsarte system of expression [310 pages]",
-    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]",
     "Irvah Lester Winter_Public Speaking Principles and Practice [419 pages]",
     "J.H. McIlvaine_Elocution The Sources and Elements of Its Power [412 pages]",
     "Rollo Anson Tallcott_The Art of Acting and Public Reading Dramatic Interpretation [250 pages]",
@@ -296,7 +294,7 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   ];
   let philosophyFocused = [
-    "John Locke_A Letter concerning Toleration and Other Writings [24 pages]",
+    "John Locke_A Letter concerning Toleration [24 pages]",
     "Francis Bacon_Novum Organum [164 pages]",
     "René Descartes_Discourse on the Method [51 pages]",
     "Arthur Schopenhauer_The Art of Controversy [41 pages]",
@@ -305,6 +303,7 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
   ];
   let mixFocused = [
     philosophyFocused,
+    "William Strunk Jr_The Elements of Style [51 pages]"
   ];
   let done = [
     "Allen Downey_Think Python [244 pages]",
