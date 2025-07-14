@@ -46,7 +46,7 @@ const currentLibrary = {
     "Critical Theory (Frankfurt School) (Stanford Encyclopedia of Philosophy)",
     "Reasons for Action: Justification, Motivation, Explanation (Stanford Encyclopedia of Philosophy)",
     "Aristotle (Stanford Encyclopedia of Philosophy)",
-    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]"
+    "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
   ],
 
   "Religion & Theology": [
@@ -66,7 +66,7 @@ const currentLibrary = {
     "Personal Autonomy (Stanford Encyclopedia of Philosophy)",
     "Agency (Stanford Encyclopedia of Philosophy)",
     "Michel de Montaigne_Essays of Michel de Montaigne—Complete [1267 pages]",
-    "Epictetus_Discourses [383 pages]"
+    "Epictetus_Discourses [383 pages]",
   ],
 
   "Literature & Poetry": [
@@ -83,7 +83,7 @@ const currentLibrary = {
     "Joseph Conrad_Heart of Darkness [96 pages]",
     "Harvard Classics Vol. 17. Folk-Lore and Fable, Aesop, Grimm, Andersen [369 pages]",
     "Frederick Douglass_Narrative of the Life of Frederick Douglass, an American Slave [126 pages]",
-    "Frederick Douglass_My Bondage and My Freedom [340 pages]"
+    "Frederick Douglass_My Bondage and My Freedom [340 pages]",
   ],
 
   "Science & History": [
@@ -97,7 +97,7 @@ const currentLibrary = {
   "Practical Skills": [
     "Allen Downey_Think Python [244 pages]",
     "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
-    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]"
+    "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]",
   ],
 
   Collections: [
@@ -175,7 +175,13 @@ const nextList = {
     "Arthur Schopenhauer_The Art of Controversy [41 pages]",
     "William James_The Will to Believe and Other Essays in Popular Philosophy [272 pages]",
     "John Locke_A Letter concerning Toleration [24 pages]",
-    "Baruch Spinoza_On the Improvement of the Understanding [27 pages]"
+    "Baruch Spinoza_On the Improvement of the Understanding [27 pages]",
+    "Wilhelm Friedrich Hegel_The Phenomenology of Spirit [802 pages]",
+    "John Dewey_Human nature and conduct [37 pages]",
+    "Lysander Spooner_No Treason. No. VI. The Constitution of No Authority [47 pages]",
+    "Emma Goldman_Anarchism and Other Essays [91 pages]",
+    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [198 pages]",
+    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [258 pages]"
   ],
 
   "Religion & Theology": [
@@ -201,6 +207,7 @@ const nextList = {
     "Sigmund Freud_The Interpretation of Dreams",
     "Sigmund Freud_A General Introduction to Psychoanalysis [426 pages]",
     "OpenStax_Psychology 2e [751 pages]",
+    "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]"
   ],
 
   "Literature & Poetry": [
@@ -243,7 +250,7 @@ const nextList = {
     "OpenStax_Introduction to Sociology 3e [669 pages]",
     "OpenStax_Introduction to Anthropology [651 pages]",
     "Adam Smith_An Inquiry Into the Nature and Causes of the Wealth of Nations [400 + 462 pages]",
-    "Mary Antin_The Promised Land [324 pages]"
+    "Mary Antin_The Promised Land [324 pages]",
   ],
 
   "Practical Skills": [
@@ -261,7 +268,7 @@ const nextList = {
     "Irvah Lester Winter_Public Speaking Principles and Practice [419 pages]",
     "J.H. McIlvaine_Elocution The Sources and Elements of Its Power [412 pages]",
     "Rollo Anson Tallcott_The Art of Acting and Public Reading Dramatic Interpretation [250 pages]",
-    "Alexander Melville Bell_The Principles of Elocution [256 pages]"
+    "Alexander Melville Bell_The Principles of Elocution [256 pages]",
   ],
 
   Collections: [
@@ -284,12 +291,8 @@ const promptQuestion =
   "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n5. Mix Focused\n6. Check Current Prints\n";
 
 r1.question(promptQuestion, function printingDecision(printingChoice) {
-  let programmingFocused = [
-    "Nill."
-  ];
-  let antislaveryFocused = [
-    "Nill."
-  ];
+  let programmingFocused = ["Nill."];
+  let antislaveryFocused = ["Nill."];
   let historyFocused = [
     "Edward Gibbon_The History of the Decline and Fall of the Roman Empire [3261 pages]",
   ];
@@ -299,11 +302,17 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "René Descartes_Discourse on the Method [51 pages]",
     "Arthur Schopenhauer_The Art of Controversy [41 pages]",
     "Baruch Spinoza_On the Improvement of the Understanding [27 pages]",
-    "Baruch Spinoza_Ethics [145 pages]"
+    "Baruch Spinoza_Ethics [145 pages]",
+    "Lysander Spooner_No Treason. No. VI. The Constitution of No Authority [47 pages]",
+    "Emma Goldman_Anarchism and Other Essays [91 pages]",
+    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [198 pages]",
+    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [258 pages]"
   ];
   let mixFocused = [
     philosophyFocused,
-    "William Strunk Jr_The Elements of Style [51 pages]"
+    "William Strunk Jr_The Elements of Style [51 pages]",
+    "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]",
+    "John Dewey_Human nature and conduct [37 pages]"
   ];
   let done = [
     "Allen Downey_Think Python [244 pages]",
@@ -314,7 +323,7 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Frederick Douglass_My Bondage and My Freedom [340 pages]",
     "Marcus Tullius Cicero_Orations (Volumes 1-4) [361 + 370 + 343 + 424 pages]",
     "Katherine Jewell Everts_Vocal Expression A Class-book of Voice Training and Interpretation [208 pages]",
-    "Epictetus_Discourses [383 pages]"
+    "Epictetus_Discourses [383 pages]",
   ];
 
   function extractPageCounts(bookList) {
