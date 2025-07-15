@@ -181,21 +181,23 @@ const nextList = {
     "Lysander Spooner_No Treason. No. VI. The Constitution of No Authority [47 pages]",
     "Emma Goldman_Anarchism and Other Essays [91 pages]",
     "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [198 pages]",
-    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [258 pages]"
+    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [258 pages]",
   ],
 
   "Religion & Theology": [
     "Friedrich Schleiermacher_On Religion: Speeches to Its Cultured Despisers",
     "Blaise Pascal_Pensées",
     "Augustine of Hippo_Confessions [351 pages]",
-    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]",
+    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book Part 1 and 2 [480 pages]",
     "Jean Meslier_Superstition In All Ages [99 pages]",
     "Watson Heston_The Freethinkers' Pictorial Text-Book [368 pages]",
     "baron d' Paul Henri Thiry Holbach_The System of Nature [194+150 pages]",
     "Percy Bysshe Shelley_Necessity Of Atheism [11 pages]",
     "Desiderius Erasmus_In Praise of Folly [116 pages]",
     "Laozi_The Tao Teh King or the Tao and its Characteristics",
-    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book [480 pages]",
+    "John Foxe_Foxe’s Book of Martyrs [256 pages]",
+    "James George Frazer_The Golden Bough_Volume 1 [400 pages]",
+    "James George Frazer_The Golden Bough_Volume 2 [466 pages]",
   ],
 
   "Self-Development": [
@@ -207,7 +209,7 @@ const nextList = {
     "Sigmund Freud_The Interpretation of Dreams",
     "Sigmund Freud_A General Introduction to Psychoanalysis [426 pages]",
     "OpenStax_Psychology 2e [751 pages]",
-    "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]"
+    "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]",
   ],
 
   "Literature & Poetry": [
@@ -305,14 +307,18 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Baruch Spinoza_Ethics [145 pages]",
     "Lysander Spooner_No Treason. No. VI. The Constitution of No Authority [47 pages]",
     "Emma Goldman_Anarchism and Other Essays [91 pages]",
-    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [198 pages]",
-    "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [258 pages]"
+    "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
   ];
   let mixFocused = [
     philosophyFocused,
     "William Strunk Jr_The Elements of Style [51 pages]",
     "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]",
-    "John Dewey_Human nature and conduct [37 pages]"
+    "John Dewey_Human nature and conduct [37 pages]",
+    "Victor Hugo_Les Misérables [1805 pages]",
+    "Nathaniel Hawthorne_The Scarlet Letter [206 pages]",
+    "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book Part 1 and 2 [480 pages]",
+    "Mary Antin_The Promised Land [324 pages]",
+    "George Orwell_1984 [182 pages]"
   ];
   let done = [
     "Allen Downey_Think Python [244 pages]",
