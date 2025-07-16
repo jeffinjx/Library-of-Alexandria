@@ -182,6 +182,9 @@ const nextList = {
     "Emma Goldman_Anarchism and Other Essays [91 pages]",
     "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [198 pages]",
     "William Godwin_An Enquiry Concerning Political Justice_Volume 1 [258 pages]",
+    "Frederick Dumont Smith_Individualism and Collectivism, the Primary Causes of the European Conflict [16 pages]",
+    "Hilaire Belloc_The Servile State [123 pages]",
+    "Leonard Henry Court Courtney of Penwith_Individualism versus Collectivism [5 pages]",
   ],
 
   "Religion & Theology": [
@@ -290,7 +293,7 @@ const nextList = {
 console.log("Hello from Hyper!");
 
 const promptQuestion =
-  "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n5. Mix Focused\n6. Check Current Prints\n";
+  "What matters most now?\n1. History Focused\n2. Programming Focused\n3. Philosophy Focused\n4. Anti-Slavery Focused\n5. Individualism vs Collectivism Focused\n6. Mix Focused\n7. Check Current Prints\n";
 
 r1.question(promptQuestion, function printingDecision(printingChoice) {
   let programmingFocused = ["Nill."];
@@ -309,18 +312,24 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     "Emma Goldman_Anarchism and Other Essays [91 pages]",
     "Giulia Girlando_Panopticon and surveillance an ethical approach to social control [53 pages]",
   ];
+  let individualismVsCollectivismFocused = [
+    "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]",
+    "Frederick Dumont Smith_Individualism and Collectivism, the Primary Causes of the European Conflict [16 pages]",
+    "Hilaire Belloc_The Servile State [123 pages]",
+    "Leonard Henry Court Courtney of Penwith_Individualism versus Collectivism [5 pages]",
+  ];
   let mixFocused = [
     philosophyFocused,
+    individualismVsCollectivismFocused,
     "William Strunk Jr_The Elements of Style [51 pages]",
-    "Robert G. Ingersoll_Individuality From 'The Gods and Other Lectures' [11 pages]",
     "John Dewey_Human nature and conduct [37 pages]",
     "Victor Hugo_Les Misérables [1805 pages]",
     "Nathaniel Hawthorne_The Scarlet Letter [206 pages]",
     "Annie Besant and Charles Bradlaugh_The Freethinker’s Text-Book Part 1 and 2 [480 pages]",
     "Mary Antin_The Promised Land [324 pages]",
-    "George Orwell_1984 [182 pages]"
+    "George Orwell_1984 [182 pages]",
   ];
-  let done = [
+  let firstCompletedBatch = [
     "Allen Downey_Think Python [244 pages]",
     "Marijn Haverbeke_Eloquent JavaScript [435 pages]",
     "The Constitution of The Unted States of America [19 pages]",
@@ -368,12 +377,24 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     0
   );
 
-  let donePageCounts = extractPageCounts(done);
-  const doneTotalPages = donePageCounts.reduce((sum, pages) => sum + pages, 0);
+  let individualismVsCollectivismFocusedPageCounts = extractPageCounts(
+    individualismVsCollectivismFocused
+  );
+  const individualismVsCollectivismFocusedTotalPages =
+    individualismVsCollectivismFocusedPageCounts.reduce(
+      (sum, pages) => sum + pages,
+      0
+    );
 
   let flatMixFocused = mixFocused.flat();
   let mixPageCounts = extractPageCounts(flatMixFocused);
   const mixTotalPages = mixPageCounts.reduce((sum, pages) => sum + pages, 0);
+
+  let firstCompletedBatchPageCounts = extractPageCounts(firstCompletedBatch);
+  const firstCompletedBatchTotalPages = firstCompletedBatchPageCounts.reduce(
+    (sum, pages) => sum + pages,
+    0
+  );
 
   if (printingChoice === "1") {
     console.log(historyFocused);
@@ -396,14 +417,25 @@ r1.question(promptQuestion, function printingDecision(printingChoice) {
     console.log("Total pages in Anti-Slavery List:", antislaveryTotalPages);
   }
   if (printingChoice === "5") {
+    console.log(individualismVsCollectivismFocused);
+    console.log(
+      "Individualism vs Collectivism List Totals:",
+      individualismVsCollectivismFocusedPageCounts
+    );
+    console.log(
+      "Total pages in Individualism vs Collectivism List:",
+      individualismVsCollectivismFocusedTotalPages
+    );
+  }
+  if (printingChoice === "6") {
     console.log(mixFocused);
     console.log("Mix List Totals:", mixPageCounts);
     console.log("Total pages in Mix List:", mixTotalPages);
   }
-  if (printingChoice === "6") {
-    console.log(done);
-    console.log("Done Totals:", donePageCounts);
-    console.log("Total pages done:", doneTotalPages);
+  if (printingChoice === "7") {
+    console.log(firstCompletedBatch);
+    console.log("Batch one Totals:", firstCompletedBatchPageCounts);
+    console.log("Total pages in batch one:", firstCompletedBatchTotalPages);
   }
   r1.close();
 });
